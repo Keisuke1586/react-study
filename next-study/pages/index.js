@@ -3,7 +3,8 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Main } from "@/components/main";
-import {Headline} from "@/components/Headline";
+import YourComponent, {Headline} from "@/components/Headline";
+import Alert from "@/components/Headline";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,7 +18,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Headline  page="index"/>
+      <Headline  page="index"
+      >
+        {<div className={styles.center}>foo</div>}
+      </Headline>
+      <Alert Click={()=> alert("Clicked!")} page="index" />
       <Main />
     </>
   );
