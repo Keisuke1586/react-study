@@ -1,6 +1,6 @@
+"use client"
+import styles from "./Headline.module.css";
 
-import styles from "@/styles/Home.module.css";
-import { useEffect } from 'react';
 
 export default function Alert(props) {
    
