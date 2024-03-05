@@ -6,18 +6,20 @@ import { Main } from "@/src/components/main";
 import YourComponent, {Headline} from "@/src/components/Headline/Headline";
 import Alert from "@/src/components/Headline/Headline";
 import { Header } from "@/src/components/Header";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
 
-  const handleClick = useCallback((e) => {
-    /* e.preventDefault(); */
-   alert(123);
-  }, []);
+  const [foo, setFoo] =useState(1);
+  
+  const handleClick = (e) => {
+    setFoo(foo => foo+3)
+  };
 
+  
   useEffect(()=> {
     document.body.style.backgroundColor = "lightblue";
     return ()=> {
@@ -34,11 +36,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-
-      <a href="/about" 
-         onClick={handleClick}>
-        ボタン
-      </a>
+      <h1>{foo}</h1>
+      <button onClick={handleClick}>ボタン</button>
 
       <Headline  page="index"
       >
