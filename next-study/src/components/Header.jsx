@@ -1,5 +1,5 @@
 import Link from "next/link"
-import styles from "./Headline.module.css"
+import styles from "./Headline/Headline.module.css"
 export function Header() {
     return (
         <header className={styles.center}>
