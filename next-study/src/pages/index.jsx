@@ -6,7 +6,7 @@ import { Main } from "@/src/components/main";
 import YourComponent, {Headline} from "@/src/components/Headline/Headline";
 import Alert from "@/src/components/Headline/Headline";
 import { Header } from "@/src/components/Header";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,6 +17,13 @@ export default function Home() {
     /* e.preventDefault(); */
    alert(123);
   }, []);
+
+  useEffect(()=> {
+    document.body.style.backgroundColor = "lightblue";
+    return ()=> {
+      document.body.style.backgroundColor = "";
+    }
+  },[])
 
   return (
     <>
