@@ -6,11 +6,18 @@ import { Main } from "@/src/components/main";
 import YourComponent, {Headline} from "@/src/components/Headline/Headline";
 import Alert from "@/src/components/Headline/Headline";
 import { Header } from "@/src/components/Header";
+import { useCallback } from "react";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+  const handleClick = useCallback((e) => {
+    /* e.preventDefault(); */
+   alert(123);
+  }, []);
+
   return (
     <>
       <Head>
@@ -20,6 +27,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+
+      <a href="/about" 
+         onClick={handleClick}>
+        ボタン
+      </a>
+
       <Headline  page="index"
       >
         {<div className={styles.center}>foo</div>}
